@@ -109,6 +109,8 @@ check_result $? "apt-get install failed"
 cat ${DIR_SCRIPT}/cphalcon/* > ${ignore_dir}/cphalcon.tar.gz
 pushd ${ignore_dir}
     tar -xvf cphalcon.tar.gz
+    cd cphalcon/build
+    ./install
 pushd ${ignore_dir}
 
 # Help commands
