@@ -120,6 +120,7 @@ pushd ${ignore_dir}
 pushd ${ignore_dir}
 
 pushd ${B2BADMINVESTA}
+    git config --global pull.rebase false
     git clone https://github.com/ppantelakis/b2badminvesta.git ./
     git pull
 popd
