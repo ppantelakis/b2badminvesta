@@ -138,9 +138,9 @@ popd
 #                     Executing Postgresql Commands        #
 #----------------------------------------------------------#
 
-sudo -u postgres < ${postgresql_dir}/00001_000001_first_run_create_new_db.sql
-sudo -u postgres < ${postgresql_dir}/00001_000002_run_on_b2bdb.sql
-sudo -u postgres < ${postgresql_dir}/00001_000003_run_on_b2bdb_b2badminvesta.sql
+sudo -u postgres psql < ${postgresql_dir}/00001_000001_first_run_create_new_db.sql
+sudo -u postgres psql -d b2bdb < ${postgresql_dir}/00001_000002_run_on_b2bdb.sql
+sudo -u postgres psql -d b2bdb < ${postgresql_dir}/00001_000003_run_on_b2bdb_b2badminvesta.sql
 
 # Help commands
 echo 'Help commands
