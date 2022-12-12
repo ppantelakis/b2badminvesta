@@ -121,6 +121,7 @@ pushd ${ignore_dir}
 
 pushd ${B2BADMINVESTA}
     git clone https://github.com/ppantelakis/b2badminvesta.git ./
+    git pull
 popd
 
 # Help commands
