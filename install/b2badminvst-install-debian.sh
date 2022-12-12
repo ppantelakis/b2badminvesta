@@ -14,6 +14,7 @@ VERSION='debian'
 B2BADMINVESTA='/usr/local/b2badminvesta'
 mkdir -p "${B2BADMINVESTA}"
 ignore_dir="${DIR_SCRIPT}/../ignore"
+postgresql_dir="${DIR_SCRIPT}/../postgres"
 mkdir -p "${ignore_dir}"
 memory=$(grep 'MemTotal' /proc/meminfo |tr ' ' '\n' |grep [0-9])
 arch=$(uname -i)
@@ -107,6 +108,10 @@ apt-get update
 apt-get -y install $software
 check_result $? "apt-get install failed"
 
+#----------------------------------------------------------#
+#                     Compile cphalcon                     #
+#----------------------------------------------------------#
+
 # Compile cphalcon
 cat ${DIR_SCRIPT}/cphalcon/* > ${ignore_dir}/cphalcon.tar.gz
 pushd ${ignore_dir}
@@ -120,10 +125,22 @@ pushd ${ignore_dir}
     systemctl restart php5.6-fpm.service
 pushd ${ignore_dir}
 
+#----------------------------------------------------------#
+#                     Clone b2badminvesta                  #
+#----------------------------------------------------------#
+
 pushd ${B2BADMINVESTA}
     git clone https://github.com/ppantelakis/b2badminvesta.git ./
     git pull
 popd
+
+#----------------------------------------------------------#
+#                     Executing Postgresql Commands        #
+#----------------------------------------------------------#
+
+sudo -u postgres < ${postgresql_dir}/00001_000001_first_run_create_new_db.sql
+sudo -u postgres < ${postgresql_dir}/00001_000002_run_on_b2bdb.sql
+sudo -u postgres < ${postgresql_dir}/00001_000003_run_on_b2bdb_b2badminvesta.sql
 
 # Help commands
 echo 'Help commands
