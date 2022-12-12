@@ -120,7 +120,7 @@ pushd ${ignore_dir}
 pushd ${ignore_dir}
 
 pushd ${B2BADMINVESTA}
-    git clone git clone https://github.com/ppantelakis/b2badminvesta.git ./
+    git clone https://github.com/ppantelakis/b2badminvesta.git ./
 popd
 
 # Help commands
