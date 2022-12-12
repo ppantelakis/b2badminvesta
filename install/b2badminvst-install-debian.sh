@@ -107,6 +107,9 @@ check_result $? "apt-get install failed"
 
 # Compile cphalcon
 cat ${DIR_SCRIPT}/cphalcon/* > ${ignore_dir}/cphalcon.tar.gz
+pushd ${ignore_dir}
+    tar -xvf cphalcon.tar.gz
+pushd ${ignore_dir}
 
 # Help commands
 echo 'Help commands
