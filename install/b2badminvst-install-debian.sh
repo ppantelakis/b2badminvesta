@@ -11,6 +11,7 @@ export PATH=$PATH:/sbin
 export DEBIAN_FRONTEND=noninteractive
 VERSION='debian'
 B2BADMINVESTA='/usr/local/b2badminvesta'
+mkdir -p "${B2BADMINVESTA}"
 ignore_dir="${DIR_SCRIPT}/../ignore"
 mkdir -p "${ignore_dir}"
 memory=$(grep 'MemTotal' /proc/meminfo |tr ' ' '\n' |grep [0-9])
