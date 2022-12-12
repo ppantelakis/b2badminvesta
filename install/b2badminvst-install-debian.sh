@@ -108,6 +108,7 @@ check_result $? "apt-get install failed"
 # Compile cphalcon
 cat ${DIR_SCRIPT}/cphalcon/* > ${ignore_dir}/cphalcon.tar.gz
 pushd ${ignore_dir}
+    rm -rf cphalcon
     tar -xvf cphalcon.tar.gz
     cd cphalcon/build
     ./install --phpize /usr/bin/phpize5.6 --php-config /usr/bin/php-config5.6
