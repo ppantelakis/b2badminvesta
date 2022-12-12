@@ -11,6 +11,8 @@ export PATH=$PATH:/sbin
 export DEBIAN_FRONTEND=noninteractive
 VERSION='debian'
 B2BADMINVESTA='/usr/local/b2badminvesta'
+ignore_dir="${DIR_SCRIPT}/../ignore"
+mkdir -p "${ignore_dir}"
 memory=$(grep 'MemTotal' /proc/meminfo |tr ' ' '\n' |grep [0-9])
 arch=$(uname -i)
 os='debian'
@@ -102,6 +104,9 @@ apt-get update
 # Install apt packages
 apt-get -y install $software
 check_result $? "apt-get install failed"
+
+# Compile cphalcon
+cat ${DIR_SCRIPT}/cphalcon/* > ${ignore_dir}/cphalcon.tar.gz
 
 # Help commands
 echo 'Help commands
