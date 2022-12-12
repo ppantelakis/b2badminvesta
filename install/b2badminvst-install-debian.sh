@@ -14,7 +14,7 @@ VERSION='debian'
 B2BADMINVESTA='/usr/local/b2badminvesta'
 mkdir -p "${B2BADMINVESTA}"
 ignore_dir="${DIR_SCRIPT}/../ignore"
-postgresql_dir="${DIR_SCRIPT}/../postgres"
+postgresql_dir="${DIR_SCRIPT}/postgres"
 mkdir -p "${ignore_dir}"
 memory=$(grep 'MemTotal' /proc/meminfo |tr ' ' '\n' |grep [0-9])
 arch=$(uname -i)
