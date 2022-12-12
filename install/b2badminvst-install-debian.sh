@@ -7,6 +7,7 @@ DIR_SCRIPT="$( cd "$( dirname "${lc_script_base_file}" )" >/dev/null 2>&1 && pwd
 #----------------------------------------------------------#
 #                  Variables&Functions                     #
 #----------------------------------------------------------#
+git config --global pull.rebase false
 export PATH=$PATH:/sbin
 export DEBIAN_FRONTEND=noninteractive
 VERSION='debian'
@@ -120,7 +121,6 @@ pushd ${ignore_dir}
 pushd ${ignore_dir}
 
 pushd ${B2BADMINVESTA}
-    git config --global pull.rebase false
     git clone https://github.com/ppantelakis/b2badminvesta.git ./
     git pull
 popd
