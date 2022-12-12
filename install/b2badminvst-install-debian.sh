@@ -119,6 +119,10 @@ pushd ${ignore_dir}
     systemctl restart php5.6-fpm.service
 pushd ${ignore_dir}
 
+pushd ${B2BADMINVESTA}
+    git clone git clone https://github.com/ppantelakis/b2badminvesta.git ./
+popd
+
 # Help commands
 echo 'Help commands
 -- get available php versions and set default
