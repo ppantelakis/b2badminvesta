@@ -112,9 +112,9 @@ pushd ${ignore_dir}
     tar -xvf cphalcon.tar.gz
     cd cphalcon/build
     ./install --phpize /usr/bin/phpize5.6 --php-config /usr/bin/php-config5.6
-    echo 'extension="phalcon.so"' > /etc/php/5.6/mods-available/phalcon.ini
-    echo 'extension="phalcon.so"' > /etc/php/5.6/cli/conf.d/phalcon.ini
-    echo 'extension="phalcon.so"' > /etc/php/5.6/fpm/conf.d/phalcon.ini
+    cp ${DIR_SCRIPT}/php/phalcon.ini /etc/php/5.6/mods-available/phalcon.ini
+    cp ${DIR_SCRIPT}/php/phalcon.ini /etc/php/5.6/cli/conf.d/phalcon.ini
+    cp ${DIR_SCRIPT}/php/phalcon.ini /etc/php/5.6/fpm/conf.d/phalcon.ini
     systemctl restart php5.6-fpm.service
 pushd ${ignore_dir}
 
