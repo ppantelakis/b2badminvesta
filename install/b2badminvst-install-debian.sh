@@ -110,7 +110,7 @@ cat ${DIR_SCRIPT}/cphalcon/* > ${ignore_dir}/cphalcon.tar.gz
 pushd ${ignore_dir}
     tar -xvf cphalcon.tar.gz
     cd cphalcon/build
-    ./install
+    ./install --phpize /usr/bin/phpize5.6 --php-config /usr/bin/php-config5.6
 pushd ${ignore_dir}
 
 # Help commands
