@@ -43,6 +43,7 @@ iftop
 ioping
 iotop
 iptables-persistent
+jq
 letsencrypt
 libcurl4-openssl-dev
 libffi-dev
