@@ -1,1 +1,1 @@
-git pull git@github.com:ppantelakis/b2badminvesta.git
+git clone git@github.com:ppantelakis/b2badminvesta.git
