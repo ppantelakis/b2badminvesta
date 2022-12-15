@@ -38,6 +38,7 @@ gawk
 git
 glances
 gnupg
+grafana
 htop
 iftop
 ioping
@@ -95,8 +96,13 @@ apt=/etc/apt/sources.list.d
 
 # Installing sury repo
 echo "deb http://ftp.de.debian.org/debian stretch main
-deb https://packages.sury.org/php/ $(lsb_release -sc) main" > $apt/b2badminvesta.list
+deb https://packages.sury.org/php/ $(lsb_release -sc) main
+" > $apt/b2badminvesta.list
+
+echo "deb [signed-by=/usr/share/keyrings/grafana.key] https://apt.grafana.com stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+
 wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add - 
+wget -q -O /usr/share/keyrings/grafana.key https://apt.grafana.com/gpg.key
 
 #----------------------------------------------------------#
 #                     Install packages                     #
