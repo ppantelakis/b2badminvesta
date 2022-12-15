@@ -1,0 +1,1 @@
+git pull git@github.com:ppantelakis/b2badminvesta.git
